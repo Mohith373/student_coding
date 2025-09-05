@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Roadmaps Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-code"></i> CodeRoadmaps</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#c-roadmap" class="nav-link">C Programming</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#python-roadmap" class="nav-link">Python</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#java-roadmap" class="nav-link">Java</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#dsa-roadmap" class="nav-link">DSA</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#mistakes-section" class="nav-link" onclick="showMistakesSection()">Common Mistakes</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn-login" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-signup" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Master Programming Languages</h1>
+            <p>Comprehensive roadmaps and in-depth analysis for C, Python, and Java programming languages</p>
+            <div class="hero-buttons">
+                <a href="#c-roadmap" class="btn-primary">Start Learning</a>
+                <a href="#about" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Cards Section -->
+    <section class="languages-section">
+        <div class="container">
+            <h2>Choose Your Programming Journey</h2>
+            <div class="language-cards">
+                <div class="language-card" onclick="showRoadmap('c')">
+                    <div class="card-icon">
+                        <i class="fab fa-cuttlefish"></i>
+                    </div>
+                    <h3>C Programming</h3>
+                    <p>Master the fundamentals of programming with C language</p>
+                    <div class="card-stats">
+                        <span><i class="fas fa-clock"></i> 8-12 weeks</span>
+                        <span><i class="fas fa-star"></i> Beginner</span>
+                    </div>
+                </div>
+                
+                <div class="language-card" onclick="showRoadmap('python')">
+                    <div class="card-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Learn the most versatile and beginner-friendly language</p>
+                    <div class="card-stats">
+                        <span><i class="fas fa-clock"></i> 10-16 weeks</span>
+                        <span><i class="fas fa-star"></i> Beginner</span>
+                    </div>
+                </div>
+                
+                <div class="language-card" onclick="showRoadmap('java')">
+                    <div class="card-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3>Java</h3>
+                    <p>Build enterprise applications with Java</p>
+                    <div class="card-stats">
+                        <span><i class="fas fa-clock"></i> 12-20 weeks</span>
+                        <span><i class="fas fa-star"></i> Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="language-card" onclick="showRoadmap('dsa')">
+                    <div class="card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Master problem-solving and coding interviews</p>
+                    <div class="card-stats">
+                        <span><i class="fas fa-clock"></i> 16-24 weeks</span>
+                        <span><i class="fas fa-star"></i> Advanced</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Sections -->
+    <div id="c-roadmap" class="roadmap-section">
+        <!-- C Roadmap content will be loaded here -->
+    </div>
+    
+    <div id="python-roadmap" class="roadmap-section">
+        <!-- Python Roadmap content will be loaded here -->
+    </div>
+    
+    <div id="java-roadmap" class="roadmap-section">
+        <!-- Java Roadmap content will be loaded here -->
+    </div>
+    
+    <div id="dsa-roadmap" class="roadmap-section">
+        <!-- DSA Roadmap content will be loaded here -->
+    </div>
+    
+    <div id="mistakes-section" class="roadmap-section">
+        <!-- Common Mistakes content will be loaded here -->
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name:</label>
+                    <input type="text" id="signupName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login here</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
